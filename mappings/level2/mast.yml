@@ -4585,14 +4585,9 @@ datasets:
     imas: thomson_scattering
     description: "Thomson scattering diagnostic"
     interpolate:
-      time:
-        start: 0 # diagnostic doesn't pre-trigger
-        step: 5e-3
-        fill: 'none'
-        dropna: false
       major_radius:
         start: 0.3
-        end: 1.5
+        end: 1.49
         step: 0.01
         fill: 'none'
         method: 'linear'
