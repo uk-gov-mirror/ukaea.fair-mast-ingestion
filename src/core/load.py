@@ -629,17 +629,7 @@ class Level2UDAGeometryLoader():
             return all_rows
 
         def _channel_coord(self, names):
-            """Channel labels with the prefix they all share stripped off.
-
-            The same treatment channel profiles get in UDALoader.load_channels:
-            the labels keep only the part that varies, and the full name goes on
-            the coordinate as `name`. Without it the geometry axis and the
-            channel axis of one diagnostic spell their detectors differently and
-            cannot be joined.
-
-            Opt-in per profile via `strip_common_prefix`, because switching it on
-            rewrites that profile's channel labels for everyone downstream.
-            """
+            """Channel labels with the prefix they all share stripped off."""
             if not self.strip_common_prefix:
                 return np.asarray(list(names))
 
