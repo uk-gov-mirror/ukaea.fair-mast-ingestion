@@ -67,6 +67,7 @@ class Geometry(BaseModel):
     shot: Optional[str] = None
     measurement: Optional[str] = None
     channel_name: Optional[str] = "geometry_channel"
+    strip_common_prefix: bool = False
 
 
 class ProfileInfo(BaseModel):
