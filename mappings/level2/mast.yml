@@ -600,6 +600,7 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_pf_current:
+            units: "dimensionless"
 
       pf_current_reconstructed:
         source: "EFM_FCOIL_(C)"
@@ -610,6 +611,7 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_pf_current:
+            units: "dimensionless"
 
       pf_current_chi_squared:
         source: "EFM_FCOIL_CHISQ"
@@ -620,6 +622,7 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_pf_current:
+            units: "dimensionless"
 
       pf_current_weight:
         source: "EFM_FWTFC"
@@ -630,9 +633,26 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_pf_current:
+            units: "dimensionless"
 
       b_field_pol_probe_measured:
-        source: "EFM_MAGPR_(X)"
+        source:
+          - name: "EFM_MAGPR_(X)"
+            attributes: {
+                    "n_b_field_pol_probe_order": [
+                    "CCBV01", "CCBV02", "CCBV03", "CCBV04", "CCBV05", "CCBV06", "CCBV07",
+                    "CCBV08", "CCBV09", "CCBV10", "CCBV11", "CCBV12", "CCBV13", "CCBV14",
+                    "CCBV15", "CCBV16", "CCBV17", "CCBV18", "CCBV19", "CCBV20", "CCBV21",
+                    "CCBV22", "CCBV23", "CCBV24", "CCBV25", "CCBV26", "CCBV27", "CCBV28",
+                    "CCBV29", "CCBV30", "CCBV31", "CCBV32", "CCBV33", "CCBV34", "CCBV35",
+                    "CCBV36", "CCBV37", "CCBV38", "CCBV39", "CCBV40", "OBV01", "OBV02", "OBV03",
+                    "OBV04", "OBV05", "OBV06", "OBV07", "OBV08", "OBV09", "OBV10", "OBV11",
+                    "OBV12", "OBV13", "OBV14", "OBV15", "OBV16", "OBV17", "OBV18", "OBV19",
+                    "OBR01", "OBR02", "OBR03", "OBR04", "OBR05", "OBR06", "OBR07", "OBR08",
+                    "OBR09", "OBR10", "OBR11", "OBR12", "OBR13", "OBR14", "OBR15", "OBR16",
+                    "OBR17", "OBR18", "OBR19"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.b_field_pol_probe[:].measured"
         units: "T"
         description: "Measured poloidal magnetic field probe value used as a constraint in the reconstruction"
@@ -640,9 +660,26 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_b_field_pol_probe:
+            units: "dimensionless"
 
       b_field_pol_probe_reconstructed:
-        source: "EFM_MAGPR_(C)"
+        source:
+          - name: "EFM_MAGPR_(C)"
+            attributes: {
+                    "n_b_field_pol_probe_order": [
+                    "CCBV01", "CCBV02", "CCBV03", "CCBV04", "CCBV05", "CCBV06", "CCBV07",
+                    "CCBV08", "CCBV09", "CCBV10", "CCBV11", "CCBV12", "CCBV13", "CCBV14",
+                    "CCBV15", "CCBV16", "CCBV17", "CCBV18", "CCBV19", "CCBV20", "CCBV21",
+                    "CCBV22", "CCBV23", "CCBV24", "CCBV25", "CCBV26", "CCBV27", "CCBV28",
+                    "CCBV29", "CCBV30", "CCBV31", "CCBV32", "CCBV33", "CCBV34", "CCBV35",
+                    "CCBV36", "CCBV37", "CCBV38", "CCBV39", "CCBV40", "OBV01", "OBV02", "OBV03",
+                    "OBV04", "OBV05", "OBV06", "OBV07", "OBV08", "OBV09", "OBV10", "OBV11",
+                    "OBV12", "OBV13", "OBV14", "OBV15", "OBV16", "OBV17", "OBV18", "OBV19",
+                    "OBR01", "OBR02", "OBR03", "OBR04", "OBR05", "OBR06", "OBR07", "OBR08",
+                    "OBR09", "OBR10", "OBR11", "OBR12", "OBR13", "OBR14", "OBR15", "OBR16",
+                    "OBR17", "OBR18", "OBR19"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.b_field_pol_probe[:].reconstructed"
         units: "T"
         description: "Poloidal magnetic field probe value reconstructed from the equilibrium fit"
@@ -650,9 +687,26 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_b_field_pol_probe:
+            units: "dimensionless"
 
       b_field_pol_probe_chi_squared:
-        source: "EFM_MAGPRI_CHISQ"
+        source:
+          - name: "EFM_MAGPRI_CHISQ"
+            attributes: {
+                    "n_b_field_pol_probe_order": [
+                    "CCBV01", "CCBV02", "CCBV03", "CCBV04", "CCBV05", "CCBV06", "CCBV07",
+                    "CCBV08", "CCBV09", "CCBV10", "CCBV11", "CCBV12", "CCBV13", "CCBV14",
+                    "CCBV15", "CCBV16", "CCBV17", "CCBV18", "CCBV19", "CCBV20", "CCBV21",
+                    "CCBV22", "CCBV23", "CCBV24", "CCBV25", "CCBV26", "CCBV27", "CCBV28",
+                    "CCBV29", "CCBV30", "CCBV31", "CCBV32", "CCBV33", "CCBV34", "CCBV35",
+                    "CCBV36", "CCBV37", "CCBV38", "CCBV39", "CCBV40", "OBV01", "OBV02", "OBV03",
+                    "OBV04", "OBV05", "OBV06", "OBV07", "OBV08", "OBV09", "OBV10", "OBV11",
+                    "OBV12", "OBV13", "OBV14", "OBV15", "OBV16", "OBV17", "OBV18", "OBV19",
+                    "OBR01", "OBR02", "OBR03", "OBR04", "OBR05", "OBR06", "OBR07", "OBR08",
+                    "OBR09", "OBR10", "OBR11", "OBR12", "OBR13", "OBR14", "OBR15", "OBR16",
+                    "OBR17", "OBR18", "OBR19"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.b_field_pol_probe[:].chi_squared"
         units: "dimensionless"
         description: "Squared error normalized by the standard deviation of the poloidal magnetic field probe constraint"
@@ -660,9 +714,26 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_b_field_pol_probe:
+            units: "dimensionless"
 
       b_field_pol_probe_weight:
-        source: "EFM_FWTMP"
+        source:
+          - name: "EFM_FWTMP"
+            attributes: {
+                    "n_b_field_pol_probe_order": [
+                    "CCBV01", "CCBV02", "CCBV03", "CCBV04", "CCBV05", "CCBV06", "CCBV07",
+                    "CCBV08", "CCBV09", "CCBV10", "CCBV11", "CCBV12", "CCBV13", "CCBV14",
+                    "CCBV15", "CCBV16", "CCBV17", "CCBV18", "CCBV19", "CCBV20", "CCBV21",
+                    "CCBV22", "CCBV23", "CCBV24", "CCBV25", "CCBV26", "CCBV27", "CCBV28",
+                    "CCBV29", "CCBV30", "CCBV31", "CCBV32", "CCBV33", "CCBV34", "CCBV35",
+                    "CCBV36", "CCBV37", "CCBV38", "CCBV39", "CCBV40", "OBV01", "OBV02", "OBV03",
+                    "OBV04", "OBV05", "OBV06", "OBV07", "OBV08", "OBV09", "OBV10", "OBV11",
+                    "OBV12", "OBV13", "OBV14", "OBV15", "OBV16", "OBV17", "OBV18", "OBV19",
+                    "OBR01", "OBR02", "OBR03", "OBR04", "OBR05", "OBR06", "OBR07", "OBR08",
+                    "OBR09", "OBR10", "OBR11", "OBR12", "OBR13", "OBR14", "OBR15", "OBR16",
+                    "OBR17", "OBR18", "OBR19"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.b_field_pol_probe[:].weight"
         units: "dimensionless"
         description: "Weight given to the poloidal magnetic field probe constraint in the reconstruction"
@@ -670,9 +741,53 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_b_field_pol_probe:
+            units: "dimensionless"
+
+      b_field_pol_probe_r:
+        source: "EFM_MAGPR_R"
+        units: "m"
+        description: "Major radius of each b field pol probe on the EFIT constraint axis."
+        dimensions:
+          n_b_field_pol_probe:
+            units: "dimensionless"
+
+      b_field_pol_probe_z:
+        source: "EFM_MAGPR_Z"
+        units: "m"
+        description: "Height of each b field pol probe on the EFIT constraint axis."
+        dimensions:
+          n_b_field_pol_probe:
+            units: "dimensionless"
+
+      b_field_pol_probe_ang:
+        source: "EFM_MAGPR_ANG"
+        target_units: "rad"
+        description: "Orientation of each b field pol probe on the EFIT constraint axis."
+        dimensions:
+          n_b_field_pol_probe:
+            units: "dimensionless"
+
+      b_field_pol_probe_len:
+        source: "EFM_MAGPR_LEN"
+        units: "m"
+        description: "Effective length of each b field pol probe on the EFIT constraint axis."
+        dimensions:
+          n_b_field_pol_probe:
+            units: "dimensionless"
 
       flux_loop_measured:
-        source: "EFM_SILOP_(X)"
+        source:
+          - name: "EFM_SILOP_(X)"
+            attributes: {
+                    "n_flux_loop_order": [
+                    "CC01", "CC02", "CC03", "CC04", "CC05", "CC06", "CC07", "CC08", "CC09",
+                    "CC10", "P2U/1", "P2U/2", "P2U/3", "P2U/4", "P3U/1", "P3U/2", "P3U/3",
+                    "P3U/4", "P4U/1", "P4U/2", "P4U/3", "P4U/4", "P5U/1", "P5U/2", "P5U/3",
+                    "P5U/4", "P6U/1", "P6U/2", "P2L/1", "P2L/2", "P2L/3", "P2L/4", "P3L/1",
+                    "P3L/2", "P3L/3", "P3L/4", "P4L/1", "P4L/2", "P4L/3", "P4L/4", "P5L/1",
+                    "P5L/2", "P5L/3", "P5L/4", "P6L/1", "P6L/2"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.flux_loop[:].measured"
         units: "Wb"
         description: "Measured flux loop value used as a constraint in the reconstruction"
@@ -680,9 +795,21 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_flux_loop:
+            units: "dimensionless"
 
       flux_loop_reconstructed:
-        source: "EFM_SILOP_(C)"
+        source:
+          - name: "EFM_SILOP_(C)"
+            attributes: {
+                    "n_flux_loop_order": [
+                    "CC01", "CC02", "CC03", "CC04", "CC05", "CC06", "CC07", "CC08", "CC09",
+                    "CC10", "P2U/1", "P2U/2", "P2U/3", "P2U/4", "P3U/1", "P3U/2", "P3U/3",
+                    "P3U/4", "P4U/1", "P4U/2", "P4U/3", "P4U/4", "P5U/1", "P5U/2", "P5U/3",
+                    "P5U/4", "P6U/1", "P6U/2", "P2L/1", "P2L/2", "P2L/3", "P2L/4", "P3L/1",
+                    "P3L/2", "P3L/3", "P3L/4", "P4L/1", "P4L/2", "P4L/3", "P4L/4", "P5L/1",
+                    "P5L/2", "P5L/3", "P5L/4", "P6L/1", "P6L/2"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.flux_loop[:].reconstructed"
         units: "Wb"
         description: "Flux loop value reconstructed from the equilibrium fit"
@@ -690,9 +817,21 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_flux_loop:
+            units: "dimensionless"
 
       flux_loop_chi_squared:
-        source: "EFM_SILOP_CHISQ"
+        source:
+          - name: "EFM_SILOP_CHISQ"
+            attributes: {
+                    "n_flux_loop_order": [
+                    "CC01", "CC02", "CC03", "CC04", "CC05", "CC06", "CC07", "CC08", "CC09",
+                    "CC10", "P2U/1", "P2U/2", "P2U/3", "P2U/4", "P3U/1", "P3U/2", "P3U/3",
+                    "P3U/4", "P4U/1", "P4U/2", "P4U/3", "P4U/4", "P5U/1", "P5U/2", "P5U/3",
+                    "P5U/4", "P6U/1", "P6U/2", "P2L/1", "P2L/2", "P2L/3", "P2L/4", "P3L/1",
+                    "P3L/2", "P3L/3", "P3L/4", "P4L/1", "P4L/2", "P4L/3", "P4L/4", "P5L/1",
+                    "P5L/2", "P5L/3", "P5L/4", "P6L/1", "P6L/2"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.flux_loop[:].chi_squared"
         units: "dimensionless"
         description: "Squared error normalized by the standard deviation of the flux loop constraint"
@@ -700,9 +839,21 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_flux_loop:
+            units: "dimensionless"
 
       flux_loop_weight:
-        source: "EFM_FWTSI"
+        source:
+          - name: "EFM_FWTSI"
+            attributes: {
+                    "n_flux_loop_order": [
+                    "CC01", "CC02", "CC03", "CC04", "CC05", "CC06", "CC07", "CC08", "CC09",
+                    "CC10", "P2U/1", "P2U/2", "P2U/3", "P2U/4", "P3U/1", "P3U/2", "P3U/3",
+                    "P3U/4", "P4U/1", "P4U/2", "P4U/3", "P4U/4", "P5U/1", "P5U/2", "P5U/3",
+                    "P5U/4", "P6U/1", "P6U/2", "P2L/1", "P2L/2", "P2L/3", "P2L/4", "P3L/1",
+                    "P3L/2", "P3L/3", "P3L/4", "P4L/1", "P4L/2", "P4L/3", "P4L/4", "P5L/1",
+                    "P5L/2", "P5L/3", "P5L/4", "P6L/1", "P6L/2"
+                    ]
+                }
         imas: "equilibrium.time_slice[:].constraints.flux_loop[:].weight"
         units: "dimensionless"
         description: "Weight given to the flux loop constraint in the reconstruction"
@@ -710,6 +861,23 @@ datasets:
           time:
             imas: "equilibrium.time_slice[:].time"
           n_flux_loop:
+            units: "dimensionless"
+
+      flux_loop_r:
+        source: "EFM_SILOP_R"
+        units: "m"
+        description: "Major radius of each flux loop on the EFIT constraint axis."
+        dimensions:
+          n_flux_loop:
+            units: "dimensionless"
+
+      flux_loop_z:
+        source: "EFM_SILOP_Z"
+        units: "m"
+        description: "Height of each flux loop on the EFIT constraint axis."
+        dimensions:
+          n_flux_loop:
+            units: "dimensionless"
 
       ip_measured:
         source: "EFM_PLASMA_CURR(X)"
@@ -3856,15 +4024,15 @@ datasets:
              - "AMB_FL/CC05"
              - "AMB_FL/CC07"
              - "AMB_FL/CC09"
-             - "AMB_FL/P3L/4"
              - "AMB_FL/P3U/1"
              - "AMB_FL/P3U/4"
+             - "AMB_FL/P4U/4"
+             - "AMB_FL/P5U/1"
+             - "AMB_FL/P3L/4"
              - "AMB_FL/P4L/1"
              - "AMB_FL/P4L/4"
-             - "AMB_FL/P4U/4"
              - "AMB_FL/P5L/1"
              - "AMB_FL/P5L/4"
-             - "AMB_FL/P5U/1"
              - "AMB_FL/P6L/1"
         dimensions:
           flux_loop_channel:
@@ -3878,6 +4046,7 @@ datasets:
           shot: "/common/uda-scratch/jg3176/fluxloops.nc"
           measurement: "r"
           channel_name: "flux_loop_geometry_channel"
+          strip_common_prefix: true
         description: "Major radius of the flux loops"
         units: "m"
         source: ""
@@ -3891,6 +4060,7 @@ datasets:
           shot: "/common/uda-scratch/jg3176/fluxloops.nc"
           measurement: "z"
           channel_name: "flux_loop_geometry_channel"
+          strip_common_prefix: true
         description: "Vertical position of the flux loops"
         units: "m"
         source: ""
