@@ -3847,7 +3847,8 @@ datasets:
 
       flux_loop_flux:
         imas: "magnetics.flux_loop[:].flux.data"
-        source: 
+        description: "Experimental measurement of poloidal magnetic flux obtained from flux loops"
+        source:
           - name: "AMB_FL"
             channels:
              - "AMB_FL/CC03"
