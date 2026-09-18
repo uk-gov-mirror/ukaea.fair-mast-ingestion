@@ -527,7 +527,8 @@ class Level2UDAGeometryLoader():
             self.shot = profile_geometry.shot
             self.measurement = profile_geometry.measurement
             self.channel_name = profile_geometry.channel_name
-            
+            self.strip_common_prefix = profile_geometry.strip_common_prefix
+
             return self._fetch_and_process_geometry()
 
         def _fetch_and_process_geometry(self):
@@ -627,13 +628,25 @@ class Level2UDAGeometryLoader():
                         row[key] = getattr(geom_data.data['efit/data'], key)
             return all_rows
 
+        def _channel_coord(self, names):
+            """Channel labels with the prefix they all share stripped off."""
+            if not self.strip_common_prefix:
+                return np.asarray(list(names))
+
+            values, template = UDALoader._extract_channel_template(list(names))
+            coord = xr.DataArray(data=np.asarray(values), dims=[self.channel_name])
+            if template is not None:
+                coord.attrs["name"] = template
+            return coord
+
         def _create_xarray(self, geom_df):
             data = geom_df[f"{self.measurement}"].to_numpy()
 
             if "b_field_tor_probe_saddle" in self.name:
                 data = np.stack(data)
                 dims = [self.channel_name, "coordinate"]
-                coords = {self.channel_name: geom_df["name"].values, "coordinate": np.arange(data.shape[1])}
+                coords = {self.channel_name: self._channel_coord(geom_df["name"].values),
+                          "coordinate": np.arange(data.shape[1])}
 
             elif "cam" in self.name:
                 data = np.stack(data).squeeze()
@@ -659,7 +672,7 @@ class Level2UDAGeometryLoader():
 
             else:
                 dims = [self.channel_name]
-                coords = {self.channel_name: geom_df["name"].values}
+                coords = {self.channel_name: self._channel_coord(geom_df["name"].values)}
 
             return xr.DataArray(
                 name=self.name,

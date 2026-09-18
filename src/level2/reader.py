@@ -128,14 +128,18 @@ class DatasetReader:
             attrs=dataset.attrs,
         )
 
-        if profile.units is not None:
-            item.attrs["units"] = profile.units
+        units = profile.units if profile.units is not None else item.attrs.get("units")
+        item.attrs = dict()
+
+        if units is not None:
+            item.attrs["units"] = units
 
         if profile.imas is not None:
             item.attrs["imas"] = profile.imas
 
         item.attrs["description"] = profile.description
         item.attrs["name"] = profile_name
+        item.attrs["uda_name"] = source.name
 
         if source.attributes is not None and isinstance(source.attributes, dict):
             item.attrs.update(source.attributes)
@@ -274,8 +278,8 @@ class DatasetReader:
         data = data.squeeze()
 
         attrs = {}
-        for name in ["units", "description", "label"]:
-            attrs[name] = data.attrs[name]
+        for name in ["units", "description"]:
+            attrs[name] = data.attrs.get(name, "")
 
         data = data.values
         ndims = len(data.shape)
